@@ -8,6 +8,8 @@ A real-time Solana blockchain dashboard built with React frontend and Go backend
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
+<img src="./demo.png" />
+
 ## 🚀 Features
 
 - Real-time transaction metrics
