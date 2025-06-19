@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { MetricsCard } from "./components/MetricsCard";
 import { ChartComponent } from "./components/ChartComponent";
@@ -85,7 +85,9 @@ function App() {
 
     fetchMetrics();
     const interval = setInterval(fetchMetrics, 10000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval as NodeJS.Timeout);
+    };
   }, [hasLoadedOnce]);
 
   if (loading && !hasLoadedOnce) {

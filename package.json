@@ -1,24 +1,21 @@
 {
   "name": "sol-gogo",
   "version": "1.0.0",
-  "description": "Solana Blockchain Dashboard - React Frontend & Go Backend",
-  "private": true,
+  "description": "Solana blockchain dashboard with Go backend and React frontend",
+  "main": "index.js",
   "workspaces": [
     "frontend"
   ],
   "scripts": {
-    "dev:frontend": "cd frontend && npm run dev",
-    "dev:backend": "cd backend && go run main.go",
-    "build:frontend": "cd frontend && npm run build",
-    "build:backend": "cd backend && go build -o bin/server main.go",
-    "install:frontend": "cd frontend && npm install",
-    "setup": "npm run install:frontend",
-    "docker:dev": "docker compose -f docker-compose.dev.yml up --build",
-    "docker:prod": "docker compose up --build",
+    "build": "cd backend && go build -o bin/server main.go && cd ../frontend && bun run build",
+    "start": "cd backend && ./bin/server",
+    "frontend:dev": "cd frontend && bun dev",
+    "frontend:build": "cd frontend && bun run build",
+    "backend:dev": "cd backend && go run main.go",
+    "backend:build": "cd backend && go build -o bin/server main.go",
+    "docker:build": "docker compose build",
+    "docker:up": "docker compose up",
     "docker:down": "docker compose down",
-    "docker:down:dev": "docker compose -f docker-compose.dev.yml down"
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.2"
+    "docker:dev": "docker compose -f docker-compose.dev.yml up --build"
   }
 }
