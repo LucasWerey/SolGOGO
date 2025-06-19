@@ -2,6 +2,11 @@
 
 A real-time Solana blockchain dashboard built with React frontend and Go backend.
 
+[![Frontend CI](https://github.com/lucaswerey/SolGogo/actions/workflows/frontend.yml/badge.svg)](https://github.com/lucaswerey/SolGogo/actions/workflows/frontend.yml)
+[![Backend CI](https://github.com/lucaswerey/SolGogo/actions/workflows/backend.yml/badge.svg)](https://github.com/lucaswerey/SolGogo/actions/workflows/backend.yml)
+[![Docker CI](https://github.com/lucaswerey/SolGogo/actions/workflows/docker.yml/badge.svg)](https://github.com/lucaswerey/SolGogo/actions/workflows/docker.yml)
+[![Security Scan](https://github.com/lucaswerey/SolGogo/actions/workflows/security.yml/badge.svg)](https://github.com/lucaswerey/SolGogo/actions/workflows/security.yml)
+
 [![Solana](https://img.shields.io/badge/Solana-9945FF?style=for-the-badge&logo=solana&logoColor=white)](https://solana.com/)
 [![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://golang.org/)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)

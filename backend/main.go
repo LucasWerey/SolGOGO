@@ -348,34 +348,6 @@ func calculateTPS(samples []map[string]interface{}) float64 {
 	return totalTPS / float64(len(samples))
 }
 
-func calculateAverageBlockTime(samples []map[string]interface{}) float64 {
-	if len(samples) == 0 {
-		return 0
-	}
-
-	var totalBlockTime float64
-	validSamples := 0
-
-	for _, sample := range samples {
-		if numSlots, ok := sample["numSlots"].(float64); ok {
-			if samplePeriodSecs, ok := sample["samplePeriodSecs"].(float64); ok && numSlots > 0 {
-
-				blockTime := samplePeriodSecs / numSlots
-				if blockTime > 0 && blockTime < 10 {
-					totalBlockTime += blockTime
-					validSamples++
-				}
-			}
-		}
-	}
-
-	if validSamples == 0 {
-		return 0.4
-	}
-
-	return totalBlockTime / float64(validSamples)
-}
-
 func (s *SolanaRPCClient) GetCachedBlockTime() float64 {
 	s.mutex.RLock()
 
@@ -634,10 +606,6 @@ func (s *SolanaRPCClient) GetTokenAccountsByMint(mintAddress string, limit int) 
 	s.setCache(cacheKey, tokenHolders, 5*time.Minute)
 
 	return tokenHolders, nil
-}
-
-func (s *SolanaRPCClient) getTokenLargestAccounts(mintAddress string, limit int) ([]map[string]interface{}, error) {
-	return s.GetTokenAccountsByMint(mintAddress, limit)
 }
 
 func main() {
